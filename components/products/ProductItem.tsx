@@ -7,11 +7,11 @@ import { Product } from '@/lib/models/ProductModel';
 import { Rating } from './Rating';
 
 const ProductItem = async ({ product }: { product: Product }) => {
-  const buffer = await fetch(product.image).then(async (res) =>
-    Buffer.from(await res.arrayBuffer()),
-  );
+  // const buffer = await fetch(product.image).then(async (res) =>
+  //   Buffer.from(await res.arrayBuffer()),
+  // );
 
-  const { base64 } = await getPlaiceholder(buffer);
+  // const { base64 } = await getPlaiceholder(buffer);
 
   return (
     <div className='card mb-4 bg-base-300'>
@@ -20,7 +20,7 @@ const ProductItem = async ({ product }: { product: Product }) => {
           href={`/product/${product.slug}`}
           className='relative aspect-square h-full w-full'
         >
-          <Image
+          {/* <Image
             src={product.image}
             alt={product.name}
             placeholder='blur'
@@ -28,7 +28,7 @@ const ProductItem = async ({ product }: { product: Product }) => {
             width={350}
             height={350}
             className='h-full w-full object-cover'
-          />
+          /> */}
         </Link>
       </figure>
       <div className='card-body'>
