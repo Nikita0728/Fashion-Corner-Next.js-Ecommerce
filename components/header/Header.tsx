@@ -24,7 +24,7 @@ const Header = () => {
           </div>
           <div className='flex gap-10 max-xl:gap-5 max-lg:hidden'>
             <Link href={'/'}>HOME</Link>
-            <Link href={'/'}>ABOUT US</Link>
+            <Link href={'/about-us'}>ABOUT US</Link>
             <Link href={'/'}>SHOP</Link>
             <Link href={'/'}>CONTACT US</Link>
           </div>
