@@ -2,7 +2,6 @@ import { AlignJustify } from 'lucide-react';
 import Link from 'next/link';
 
 import Menu from './Menu';
-import { SearchBox } from './SearchBox';
 
 const Header = () => {
   return (
@@ -12,13 +11,13 @@ const Header = () => {
           <div>
             <label
               htmlFor='my-drawer'
-              className='btn btn-square btn-ghost hidden max-lg:block'
+              className='btn btn-square btn-ghost hidden p-3 text-center max-lg:block'
             >
               <AlignJustify />
             </label>
             <Link
               href='/'
-              className='ml-2 text-base font-semibold sm:ml-4 sm:text-lg'
+              className='ml-2 text-base font-semibold max-sm:hidden sm:ml-4 sm:text-lg'
             >
               Fashion Corner
             </Link>
@@ -30,9 +29,6 @@ const Header = () => {
             <Link href={'/'}>CONTACT US</Link>
           </div>
           <Menu />
-        </div>
-        <div className='block bg-base-300 pb-3 text-center lg:hidden'>
-          <SearchBox />
         </div>
       </nav>
     </header>

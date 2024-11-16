@@ -5,6 +5,8 @@ import useSWR from 'swr';
 
 import useLayoutService from '@/lib/hooks/useLayout';
 
+import { SearchBox } from './header/SearchBox';
+
 const Sidebar = () => {
   const { toggleDrawer } = useLayoutService();
   const {
@@ -22,10 +24,22 @@ const Sidebar = () => {
         <h2 className='text-xl'>Fashion Corner</h2>
       </li>
 
-      <li>HOME</li>
-      <li>ABOUT US</li>
-      <li>SHOP</li>
-      <li>CONTACT US</li>
+      <li>
+        <Link href='/'>HOME</Link>
+      </li>
+      <li>
+        <Link href='/'>ABOUT US</Link>
+      </li>
+      <li>
+        <Link href='/'>SHOP</Link>
+      </li>
+      <li>
+        <Link href='/'>CONTACT US</Link>
+      </li>
+
+      <div className='block  lg:hidden'>
+        <SearchBox />
+      </div>
     </ul>
   );
 };

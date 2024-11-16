@@ -33,7 +33,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
               <label
                 htmlFor='my-drawer'
                 aria-label='close sidebar'
-                className='drawer-overlay'
+                className='drawer-overlay m-5'
               ></label>
               <Sidebar />
             </div>
