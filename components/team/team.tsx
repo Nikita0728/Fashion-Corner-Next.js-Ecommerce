@@ -1,11 +1,14 @@
 import React from 'react';
 import 'tailwindcss/tailwind.css'; // Make sure Tailwind CSS is imported
+import TestimonialsSection from './clients';
+import Image from 'next/image';
+import man from '@/public/images/team/man.png'
 
 const teamMembers = [
   {
     name: 'Ganesh',
     position: 'CEO of Company',
-    image: 'path_to_image_1.jpg', // Replace with your image path
+    image: man, // Replace with your image path
     socialLinks: [
       { icon: 'fab fa-twitter', link: '#' },
       { icon: 'fab fa-facebook-f', link: '#' },
@@ -16,7 +19,7 @@ const teamMembers = [
   {
     name: 'Ram',
     position: 'Co-founder',
-    image: 'path_to_image_2.jpg',
+    image: man,
     socialLinks: [
       { icon: 'fab fa-twitter', link: '#' },
       { icon: 'fab fa-facebook-f', link: '#' },
@@ -27,7 +30,7 @@ const teamMembers = [
   {
     name: 'Monica',
     position: 'Marketing Officer',
-    image: 'path_to_image_3.jpg',
+    image: man,
     socialLinks: [
       { icon: 'fab fa-twitter', link: '#' },
       { icon: 'fab fa-facebook-f', link: '#' },
@@ -38,7 +41,7 @@ const teamMembers = [
   {
     name: 'Hari',
     position: 'Photographer',
-    image: 'path_to_image_4.jpg',
+    image: man,
     socialLinks: [
       { icon: 'fab fa-twitter', link: '#' },
       { icon: 'fab fa-facebook-f', link: '#' },
@@ -59,10 +62,10 @@ const TeamSection = () => {
             key={index}
             className="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition-transform transform hover:scale-105 w-60"
           >
-            <img
+            <Image
               src={member.image}
               alt={member.name}
-              className="w-32 h-32 rounded-full mx-auto mb-4"
+              className="w-32 h-32  mx-auto mb-4"
             />
             <h4 className="text-xl font-bold">{member.name}</h4>
             <p className="text-sm text-gray-500 mb-4">{member.position}</p>
@@ -80,6 +83,7 @@ const TeamSection = () => {
           </div>
         ))}
       </div>
+      <TestimonialsSection/>
     </section>
   );
 };
