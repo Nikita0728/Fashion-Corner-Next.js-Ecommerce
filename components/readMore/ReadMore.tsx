@@ -1,43 +1,46 @@
-'use client';
+import React from 'react';
 
-import { ChevronDown, ChevronUp } from 'lucide-react';
-import { useState } from 'react';
-
-import { cn } from '@/lib/utils';
-
-const ReadMore = ({ children }: { children: React.ReactNode }) => {
-  const [isMore, setIsMore] = useState(false);
-
+const ContactUs = () => {
   return (
-    <div className='mb-10 py-5 md:py-10'>
-      <div
-        className={cn(
-          `relative mx-auto w-full overflow-hidden ${isMore ? 'h-full' : 'h-[400px]'}`,
-        )}
-      >
-        {!isMore && (
-          <div className='absolute bottom-0 flex h-2/3 w-full items-center bg-gradient-to-b from-transparent to-base-100'>
-            <button
-              onClick={() => setIsMore(true)}
-              className='btn mx-auto mt-2 self-end'
-            >
-              Read More
-              <ChevronDown />
-            </button>
-          </div>
-        )}
-        {children}
-        <div className='flex items-center'>
-          {isMore && (
-            <button onClick={() => setIsMore(false)} className='btn mx-auto'>
-              Hide
-              <ChevronUp />
-            </button>
-          )}
+    <div className="flex flex-col md:flex-row justify-between gap-8 p-4 md:p-8">
+      <div className="flex-1 min-w-[280px] p-6 bg-gray-100 rounded-lg">
+        <h2 className="text-xl md:text-2xl font-bold mb-4">Get in touch</h2>
+        <p className="mb-4">Proin volutpat consequat porttitor cras nullam gravida at. Orci molestie a eu arcu. Sed ut tincidunt integer elementum id sem. Arcu sed malesuada et magna.</p>
+        <div className="space-y-2">
+          <p><i className="fas fa-map-marker-alt mr-2"></i> 545 Mavis Island, Chicago, IL 99191</p>
+          <p><i className="fas fa-phone mr-2"></i> +1 (555) 234-5678</p>
+          <p><i className="fas fa-envelope mr-2"></i> hello@example.com</p>
         </div>
+      </div>
+      <div className="flex-1 min-w-[280px] p-6 bg-white rounded-lg shadow-md">
+        <form className="space-y-4">
+          <div className="flex flex-col md:flex-row gap-4">
+            <div className="flex-1">
+              <label className="block font-semibold mb-1">First name</label>
+              <input type="text" placeholder="First name" className="w-full p-2 border border-gray-300 rounded" />
+            </div>
+            <div className="flex-1">
+              <label className="block font-semibold mb-1">Last name</label>
+              <input type="text" placeholder="Last name" className="w-full p-2 border border-gray-300 rounded" />
+            </div>
+          </div>
+          <div>
+            <label className="block font-semibold mb-1">Email</label>
+            <input type="email" placeholder="Email" className="w-full p-2 border border-gray-300 rounded" />
+          </div>
+          <div>
+            <label className="block font-semibold mb-1">Phone number</label>
+            <input type="tel" placeholder="Phone number" className="w-full p-2 border border-gray-300 rounded" />
+          </div>
+          <div>
+            <label className="block font-semibold mb-1">Message</label>
+            <textarea placeholder="Message" className="w-full p-2 border border-gray-300 rounded resize-vertical"></textarea>
+          </div>
+          <button type="submit" className="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 w-full md:w-auto">Send message</button>
+        </form>
       </div>
     </div>
   );
 };
 
-export default ReadMore;
+export default ContactUs;
