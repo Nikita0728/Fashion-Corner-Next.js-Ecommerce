@@ -24,8 +24,8 @@ const Menu = () => {
   };
 
   return (
-    <>
-      <div className='hidden md:block'>
+    <div>
+      <div className='mx-2 hidden lg:block'>
         <SearchBox />
       </div>
       <ul className='flex gap-2'>
@@ -98,7 +98,7 @@ const Menu = () => {
           </li>
         )}
       </ul>
-    </>
+    </div>
   );
 };
 

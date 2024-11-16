@@ -11,7 +11,6 @@ export const SearchBox = () => {
   const category = searchParams.get('category') || 'all';
   const router = useRouter();
 
-  const [formCategory, setFormCategory] = useState(category);
   const [formQuery, setFormQuery] = useState(q);
 
   const {
@@ -26,26 +25,12 @@ export const SearchBox = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    router.push(`/search?category=${formCategory}&q=${formQuery}`);
+    router.push(`/search?category=all&q=${formQuery}`);
   };
 
   return (
     <form onSubmit={handleSubmit}>
       <div className='join'>
-        <select
-          name='category'
-          defaultValue={formCategory}
-          aria-label='Category'
-          className='join-item select select-bordered w-[90px]'
-          onChange={(e) => setFormCategory(e.target.value)}
-        >
-          <option value='all'>All</option>
-          {categories?.map((c: string) => (
-            <option key={c} value={c}>
-              {c}
-            </option>
-          ))}
-        </select>
         <input
           className='input join-item input-bordered w-40 sm:w-44'
           placeholder='Search'

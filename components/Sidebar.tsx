@@ -17,17 +17,15 @@ const Sidebar = () => {
   if (isLoading || !categories) return 'Loading...';
 
   return (
-    <ul className='menu min-h-full w-80 bg-base-200 p-4 text-base-content'>
+    <ul className='menu min-h-full w-80 space-y-4 bg-base-200 p-4 text-base-content'>
       <li>
-        <h2 className='text-xl'>Shop Categories</h2>
+        <h2 className='text-xl'>Fashion Corner</h2>
       </li>
-      {categories.map((category: string) => (
-        <li key={category}>
-          <Link href={`/search?category=${category}`} onClick={toggleDrawer}>
-            {category}
-          </Link>
-        </li>
-      ))}
+
+      <li>HOME</li>
+      <li>ABOUT US</li>
+      <li>SHOP</li>
+      <li>CONTACT US</li>
     </ul>
   );
 };
